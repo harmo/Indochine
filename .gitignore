@@ -1,0 +1,43 @@
+*.py[co]
+*.sw[po]
+.coverage
+pip-log.txt
+docs/_gh-pages
+build.py
+.DS_Store
+*-min.css
+*-all.css
+*-min.js
+*-all.js
+.noseids
+tmp/*
+*~
+*.mo
+*.db
+*.rdb
+*.cache
+*.sqlite3
+
+build
+docs/_build
+
+# Virtualenv:
+.env
+/env
+/env/
+/env-python2.*/
+/env-test/
+/__pycache__/
+
+
+# PyDev:
+/.project
+/.pydevproject
+/.settings
+
+
+# SublimeText project files
+/*.sublime-project
+/*.sublime-workspace
+
+
