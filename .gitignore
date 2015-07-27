@@ -1,4 +1,5 @@
-*.py[co]
+__pycache__/
+*.py[cod]
 *.sw[po]
 .coverage
 pip-log.txt
@@ -27,7 +28,6 @@ docs/_build
 /env/
 /env-python2.*/
 /env-test/
-/__pycache__/
 
 
 # PyDev:
