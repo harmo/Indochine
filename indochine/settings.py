@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
     'compressor',
-] + get_core_apps()
+    'widget_tweaks',
+] + get_core_apps([
+    'indochine.apps.catalogue',
+])
 
 SITE_ID = 1
 
@@ -98,7 +101,7 @@ DATABASES = {'default': dj_database_url.config()}
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr_fr'
 
 TIME_ZONE = 'UTC'
 
@@ -115,6 +118,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.environ.get('STATIC_ROOT', os.path.join(BASE_DIR, 'public', 'static'))
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'indochine', 'static'), )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
+MEDIA_URL = '/media/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
 
 # Debug toolbar
 

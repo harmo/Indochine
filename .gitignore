@@ -41,3 +41,5 @@ docs/_build
 /*.sublime-workspace
 
 
+# Django specific
+/public
