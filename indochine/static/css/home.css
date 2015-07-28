@@ -1,10 +1,6 @@
 /**
- * CAROUSEL
+ * CAROUSELS
  */
-
-#news {
-
-}
 
 .carousel-controls {
     margin-top: 10px;
@@ -40,6 +36,30 @@
     background-color: #A09EA0;
     width: 12px;
     height: 12px;
+}
+
+
+/**
+ * BOTTOM SLIDER
+ */
+
+#rubrics {
+    margin-top: 25px;
+    border-bottom: 20px solid #363136;
+    margin: 0 auto;
+    height: 397px;
+}
+#rubrics .item img {
+    margin: 0 auto;
+}
+#rubrics a.carousel-control {
+    background-image: none;
+}
+#rubrics a.carousel-control.left .glyphicon-chevron-left {
+    margin-left: -75px;
+}
+#rubrics a.carousel-control.right .glyphicon-chevron-right {
+    margin-right: -75px;
 }
 
 
