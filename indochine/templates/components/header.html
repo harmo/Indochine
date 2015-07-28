@@ -1,0 +1,30 @@
+{% load staticfiles %}
+    <header class="header container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{% url "promotions:home" %}" class="site-logo">
+                    <img src="{% static "images/Logo-Indochine-horizontal.png" %}" alt="INDOCHINE" />
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div class="cc-portet-logo hidden-xs">
+                    <img src="{% static "images/Logo-CC-Portet.png" %}" alt="CC-Portet" />
+                </div>
+                <div class="site-infos">
+                    <div class="phone">
+                        <img src="{% static "images/Picto-header-Tel.png" %}" alt="phone-picto" />
+                        <a href="tel:+33561723228">05 61 72 32 28</a>
+                    </div>
+                    <div class="map">
+                        <img src="{% static "images/Picto-header-Map.png" %}" alt="map-picto" />
+                        <address>C.C. Carrefour Grand Portet</address>
+                        <small>Entrée n°1</small>
+                    </div>
+                    <div class="hours">
+                        <img src="{% static "images/Picto-header-Horloge.png" %}" alt="hours-picto" />
+                        Du lundi au samedi de 9h30 à 20h30
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

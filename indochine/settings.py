@@ -114,3 +114,41 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.environ.get('STATIC_ROOT', os.path.join(BASE_DIR, 'public', 'static'))
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'indochine', 'static'), )
+
+# Debug toolbar
+
+if DEBUG:
+    try:
+        import debug_toolbar  # noqa
+    except ImportError:
+        pass
+    else:
+        INTERNAL_IPS = (
+            '127.0.0.1',
+        )
+
+        INSTALLED_APPS += (
+            'debug_toolbar',
+        )
+
+        MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + (
+            'debug_toolbar.middleware.DebugToolbarMiddleware',
+        )
+
+        DEBUG_TOOLBAR_CONFIG = {
+            'INTERCEPT_REDIRECTS': False,
+            'HIDE_DJANGO_SQL': False,
+        }
+
+        DEBUG_TOOLBAR_PANELS = (
+            # 'debug_toolbar.panels.version.VersionDebugPanel',
+            'debug_toolbar.panels.timer.TimerDebugPanel',
+            # 'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
+            # 'debug_toolbar.panels.headers.HeaderDebugPanel',
+            'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+            'debug_toolbar.panels.template.TemplateDebugPanel',
+            'debug_toolbar.panels.sql.SQLDebugPanel',
+            'debug_toolbar.panels.signals.SignalDebugPanel',
+            # 'debug_toolbar.panels.logger.LoggingPanel',
+        )

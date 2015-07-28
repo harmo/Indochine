@@ -1,0 +1,189 @@
+body {
+    font-family: 'Myriad Pro Regular';
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: 'Myriad Pro Bold';
+    font-size: 32px;
+    color: #363136;
+    background: url('/static/images/Trait-H1.png') no-repeat bottom left;
+    padding-bottom: 10px;
+}
+
+body>div.container {
+    margin-bottom: 20px;
+}
+
+
+/*
+ * HEADER
+ */
+
+header {
+    margin: 20px;
+}
+header .site-logo img {
+    width: 90%;
+}
+header .cc-portet-logo {
+    float: left;
+    height: 114px;
+    border-right: 1px solid #B2B738;
+    margin-right: 20px;
+}
+header .site-infos div {
+
+}
+header .site-infos div img {
+    margin-right: 20px;
+}
+header .site-infos .phone img {
+    float: left;
+    padding-top: 5px;
+}
+header .site-infos .phone a {
+    font-family: 'Myriad Pro Bold';
+    font-size: 27px;
+    color: #791F1F;
+}
+header .site-infos .phone a:hover {
+    text-decoration: none;
+}
+header .site-infos .map img {
+    float: left;
+    padding-top: 5px;
+}
+header .site-infos .map address {
+    font-family: 'Myriad Pro Bold';
+    font-size: 21px;
+    color: #363136;
+    margin-bottom: 0;
+    line-height: 22px;
+}
+header .site-infos .map small {
+    font-family: 'Myriad Pro Regular';
+    font-size: 20px;
+}
+header .site-infos .hours {
+    font-family: 'Myriad Pro Regular';
+    font-size: 18px;
+    color: #B2B738;
+    padding-top: 5px;
+}
+@media (max-width: 992px) {
+    header .site-logo img {
+        margin-bottom: 10px;
+    }
+}
+
+/**
+ * NAVBAR
+ */
+
+div.navbar {
+    border: none;
+    border-radius: 0;
+    border-top: 20px solid #363136;
+    border-bottom: 2px solid #363136;
+}
+div.navbar .navbar-toggle {
+    border-color: #ddd;
+}
+div.navbar .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+div.navbar ul.nav li a {
+    line-height: 28px;
+    font-family: 'Myriad Pro Regular';
+    font-size: 18px;
+    color: #363136;
+    text-transform: uppercase;
+}
+div.navbar ul.nav li a.active {
+    font-family: 'Myriad Pro Bold';
+}
+div.navbar ul.nav li a:hover {
+    background-color: transparent;
+    font-weight: bold;
+}
+div.navbar ul.nav li img {
+    float: left;
+    max-height: 25px;
+    margin-right: 10px;
+    display: none;
+}
+div.navbar ul.nav li img.visible {
+    display: block;
+}
+
+
+/**
+ * FOOTER
+ */
+
+footer {
+    border-top: 20px solid #363136;
+}
+footer .container {
+    margin-top: 20px;
+}
+footer .contact img, footer .address img {
+    float: left;
+    margin-right: 20px;
+}
+footer .contact a {
+    display: block;
+}
+footer .contact a.phone {
+    font-family: 'Myriad Pro Bold';
+    font-size: 22px;
+    color: #791F1F;
+    margin-top: 5px;
+}
+footer .contact a.phone:hover {
+    text-decoration: none;
+}
+footer .contact a.mail {
+    font-family: 'Myriad Pro SemiBold';
+    font-size: 18px;
+    color: #363136;
+}
+footer .contact a.mail:hover {
+    text-decoration: none;
+}
+footer .health img {
+    margin-top: 20px;
+    max-width: 345px;
+    margin-left: -70px;
+}
+footer .address address {
+    font-family: 'Myriad Pro Bold';
+    font-size: 18px;
+    color: #363136;
+    margin-top: 5px;
+}
+footer .address address span {
+    font-family: 'Myriad Pro Regular';
+    font-size: 16px;
+    color: #791F1F;
+}
+footer .address address div.sec {
+    font-family: 'Myriad Pro Regular';
+    color: #B2B738;
+}
+footer .links {
+    border-top: 1px solid rgba(54, 49, 54, 0.25);
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #9A989A;
+}
+footer .links ul li {
+    display: inline;
+}
+footer .links ul li a {
+    font-family: 'Myriad Pro Regular';
+    font-size: 16px;
+    color: #9A989A;
+    padding: 10px;
+}

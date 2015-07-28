@@ -1,0 +1,61 @@
+{% load staticfiles %}
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        {% url 'promotions:home' as url %}
+                        <a href="{{ url }}" {% if request.path == url %}class="active"{% endif %}>
+                            {% if request.path != url %}
+                                <img src="{% static "images/Navbar-Accueil.png" %}" class="visible" alt="accueil" />
+                            {% endif %}
+                            <img src="{% static "images/Navbar-Accueil-roll.png" %}" {% if request.path == url %}class="visible"{% endif %} alt="accueil" />
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{% static "images/Navbar-Nos-formules.png" %}" class="visible" alt="nos formules" />
+                            <img src="{% static "images/Navbar-Nos-formules-roll.png" %}" alt="nos formules" />
+                            Nos formules
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{% static "images/Navbar-La-Carte.png" %}" class="visible" alt="la carte" />
+                            <img src="{% static "images/Navbar-La-Carte-roll.png" %}" alt="la carte" />
+                            La carte
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a href="#">
+                            <img src="{% static "images/Navbar-Mon-compte.png" %}" class="visible" alt="mon compte" />
+                            <img src="{% static "images/Navbar-Mon-compte-roll.png" %}" alt="mon compte" />
+                            Mon compte
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{% static "images/Navbar-Qui-sommes-nous.png" %}" class="visible" alt="qui sommes nous" />
+                            <img src="{% static "images/Navbar-Qui-sommes-nous-roll.png" %}" alt="qui sommes nous" />
+                            Qui sommes nous ?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{% static "images/Navbar-Groupe-et-pro.png" %}" class="visible" alt="groupe et pro" />
+                            <img src="{% static "images/Navbar-Groupe-et-pro-roll.png" %}" alt="groupe et pro" />
+                            Groupe & pro
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
