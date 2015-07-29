@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'compressor',
     'widget_tweaks',
 ] + get_core_apps([
+    'indochine.apps.promotions',
     'indochine.apps.catalogue',
     'indochine.apps.dashboard',
     'indochine.apps.dashboard.catalogue',

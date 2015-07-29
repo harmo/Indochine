@@ -69,7 +69,7 @@
 
 .suggestions {
     margin-top: 30px;
-    padding: 20px;
+    padding: 20px 10px 10px 20px;
     background-color: rgba(54, 49, 54, 0.05);
     border: 1px solid rgba(54, 49, 54, 0.25);
 }
@@ -80,11 +80,19 @@
     margin-top: 5px;
     margin-bottom: 0;
 }
-.suggestions .media p {
+.suggestions .media img.media-object {
+    max-width: 64px;
+    max-height: 64px;
+}
+.suggestions .media-body p {
     font-family: 'Myriad Pro SemiBold';
     font-size: 14px;
     color: #363136;
 }
+.suggestions .media-body .desc {
+    width: 90%;
+}
 .suggestions .media a.show-product-link {
-    margin-top: 5px;
+    width: 10%;
+    margin-top: 15px;
 }

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-7">
+            <h2>Actualités</h2>
+            <div id="news" class="carousel" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="{% static "images/Banniere-CC-Portet.png" %}" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="{% static "images/Banniere-Menus.png" %}" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="{% static "images/Banniere-A-Portet.png" %}" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="{% static "images/Banniere-Commande-en-ligne.png" %}" alt="">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <a class="left" href="#news" role="button" data-slide="prev">
+                        <span><img src="{% static "images/Picto-Fleche-gauche-S1.png" %}" alt="précédent" /></span>
+                        <span class="sr-only">Précédent</span>
+                    </a>
+                    <ol class="carousel-indicators">
+                        <li data-target="#news" data-slide-to="0" class="active"></li>
+                        <li data-target="#news" data-slide-to="1"></li>
+                        <li data-target="#news" data-slide-to="2"></li>
+                        <li data-target="#news" data-slide-to="3"></li>
+                    </ol>
+                    <a class="right" href="#news" role="button" data-slide="next">
+                        <span><img src="{% static "images/Picto-Fleche-droite-S1.png" %}" alt="suivant" /></span>
+                        <span class="sr-only">Suivant</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <h2>Les suggestions du chef</h2>
+            <div class="suggestions">
+                {% for product in suggests %}
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object pull-left" src="{{ product.images.all.0.original.url|default:'https://builder.divshot.com/img/placeholder-64x64.gif'}}">
+                        </div>
+                        <div class="media-body">
+                            <div class="desc pull-left">
+                                <h3>{{ product.title }}</h3>
+                                <p>{{ product.description|safe|removetags:'p' }}</p>
+                            </div>
+                            <a class="show-product-link pull-right" href="#">
+                                <img src="{% static "images/Picto-Loupe.png" %}" alt="voir produit" />
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block after_content %}
+            <div id="rubrics" class="carousel" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="{% static "images/Banniere-Slider-2.png" %}" alt="">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <a class="left carousel-control" href="#rubrics" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" ></span>
+                        <span class="sr-only">Précédent</span>
+                    </a>
+                    <a class="right carousel-control" href="#rubrics" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Suivant</span>
+                    </a>
+                </div>
+            </div>
+{% endblock %}
