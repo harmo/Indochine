@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'indochine.apps.promotions',
     'indochine.apps.catalogue',
     'indochine.apps.dashboard',
-    'indochine.apps.dashboard.catalogue',
+    'indochine.apps.dashboard.homepage',
 ])
 
 SITE_ID = 1
@@ -125,6 +125,17 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'indochine', 'static'), )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+
+# Dashboard
+
+OSCAR_DASHBOARD_NAVIGATION += [
+    {
+        'label': 'Homepage',
+        'icon': 'icon-desktop',
+        'url_name': 'dashboard:homepage'
+    },
+]
 
 
 # Debug toolbar

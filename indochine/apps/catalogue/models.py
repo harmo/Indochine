@@ -1,9 +1,12 @@
 from django.db import models
-from oscar.apps.catalogue.abstract_models import *  # noqa
+from oscar.apps.catalogue.models import Product
 
 
-class Product(AbstractProduct):
-    suggest_on_home = models.BooleanField(default=False, verbose_name='Suggérer sur la home ?')
+class Suggests(models.Model):
+    product = models.ForeignKey(Product)
+
+    class Meta:
+        verbose_name = 'Suggestion'
 
 
-from oscar.apps.catalogue.models import *
+from oscar.apps.catalogue.models import * # noqa

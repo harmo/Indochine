@@ -1,1 +1,1 @@
-default_app_config = 'indochine.apps.dashboard.config.DashboardDashboardConfig'
+default_app_config = 'indochine.apps.dashboard.config.DashboardConfig'

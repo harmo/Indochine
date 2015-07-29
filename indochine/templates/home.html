@@ -46,21 +46,23 @@
         <div class="col-md-5">
             <h2>Les suggestions du chef</h2>
             <div class="suggestions">
-                {% for product in suggests %}
-                    <div class="media">
-                        <div class="media-left">
-                            <img class="media-object pull-left" src="{{ product.images.all.0.original.url|default:'https://builder.divshot.com/img/placeholder-64x64.gif'}}">
-                        </div>
-                        <div class="media-body">
-                            <div class="desc pull-left">
-                                <h3>{{ product.title }}</h3>
-                                <p>{{ product.description|safe|removetags:'p' }}</p>
+                {% for suggest in suggests %}
+                    {% with suggest.product as product %}
+                        <div class="media">
+                            <div class="media-left">
+                                <img class="media-object pull-left" src="{{ product.images.all.0.original.url|default:'https://builder.divshot.com/img/placeholder-64x64.gif'}}">
                             </div>
-                            <a class="show-product-link pull-right" href="#">
-                                <img src="{% static "images/Picto-Loupe.png" %}" alt="voir produit" />
-                            </a>
+                            <div class="media-body">
+                                <div class="desc pull-left">
+                                    <h3>{{ product.title }}</h3>
+                                    <p>{{ product.description|safe|removetags:'p' }}</p>
+                                </div>
+                                <a class="show-product-link pull-right" href="{{ product.get_absolute_url }}">
+                                    <img src="{% static "images/Picto-Loupe.png" %}" alt="voir produit" />
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    {% endwith %}
                 {% endfor %}
             </div>
         </div>
