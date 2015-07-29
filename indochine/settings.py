@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ] + get_core_apps([
     'indochine.apps.catalogue',
+    'indochine.apps.dashboard',
+    'indochine.apps.dashboard.catalogue',
 ])
 
 SITE_ID = 1
