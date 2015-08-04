@@ -122,7 +122,9 @@ div.navbar ul.nav li img.visible {
  */
 
 footer {
-
+    background-color: #F5F5F5;
+    padding-top: 10px;
+    border-top: 2px solid rgba(54, 49, 54, 0.25);
 }
 footer .container {
     margin-top: 20px;
