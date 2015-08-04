@@ -22,7 +22,7 @@ def homepage_suggestions(request):
     table = SuggestsTable(Suggests.objects.all())
     RequestConfig(request).configure(table)
 
-    return render(request, 'dashboard/suggests.html', {
+    return render(request, 'suggests.html', {
         'suggests': table,
         'suggest_form': ProductSelectForm})
 
@@ -43,6 +43,6 @@ def homepage_slider(request):
     table = SliderTable(SliderImages.objects.all())
     RequestConfig(request).configure(table)
 
-    return render(request, 'dashboard/slider.html', {
+    return render(request, 'slider.html', {
         'slider': table,
         'slider_form': SliderForm})

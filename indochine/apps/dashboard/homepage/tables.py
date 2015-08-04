@@ -1,5 +1,5 @@
 from django.utils.translation import ungettext_lazy
-from django_tables2 import LinkColumn, TemplateColumn, FileColumn, A
+from django_tables2 import LinkColumn, TemplateColumn, A
 from oscar.core.loading import get_class, get_model
 
 
@@ -15,7 +15,7 @@ class SuggestsTable(DashboardTable):
         verbose_name='Produit')
 
     delete = TemplateColumn(
-        template_name='dashboard/suggest-delete.html',
+        template_name='suggest-delete.html',
         verbose_name=' ',
         orderable=False)
 
@@ -29,11 +29,11 @@ class SuggestsTable(DashboardTable):
 
 class SliderTable(DashboardTable):
     image = TemplateColumn(
-        template_name='dashboard/slider-image.html',
+        template_name='slider-image.html',
         orderable=False)
 
     delete = TemplateColumn(
-        template_name='dashboard/slider-image-delete.html',
+        template_name='slider-image-delete.html',
         verbose_name=' ',
         orderable=False)
 
