@@ -24,14 +24,14 @@
 {% block dashboard_content %}
     {% block create_suggest %}
         <div class="table-header">
-            <h3><i class="icon-sitemap icon-large"></i> Ajouter une suggestion</h3>
+            <h3><i class="icon-picture icon-large"></i> Ajouter une image</h3>
         </div>
         <div class="well">
-            <form action="{% url 'dashboard:homepage_suggestions' %}" method="post" class="form-inline">
+            <form action="{% url 'dashboard:homepage_slider' %}" method="post" class="form-inline" enctype="multipart/form-data">
                 {% csrf_token %}
-                {% include "dashboard/partials/form_fields_inline.html" with form=suggest_form %}
+                {% include "dashboard/partials/form_fields_inline.html" with form=slider_form %}
                 <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}">
-                    <i class="icon-plus"></i> Ajouter aux suggestions
+                    <i class="icon-plus"></i> Ajouter aux slider
                 </button>
             </form>
         </div>
@@ -39,6 +39,6 @@
 
     <form action="." method="post">
         {% csrf_token %}
-        {% render_table suggests %}
+        {% render_table slider %}
     </form>
 {% endblock dashboard_content %}

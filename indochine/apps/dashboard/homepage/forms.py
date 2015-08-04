@@ -11,3 +11,7 @@ class ProductSelectForm(forms.Form):
         label=_("Choisir un produit"),
         empty_label=_("-- Choisir --"),
         queryset=Product.objects.all().exclude(pk__in=Suggests.objects.all().values('product__pk')))
+
+
+class SliderForm(forms.Form):
+    image = forms.ImageField()

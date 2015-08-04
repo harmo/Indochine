@@ -136,7 +136,16 @@ OSCAR_DASHBOARD_NAVIGATION += [
     {
         'label': 'Homepage',
         'icon': 'icon-desktop',
-        'url_name': 'dashboard:homepage'
+        'children': [
+            {
+                'label': 'Suggestions',
+                'url_name': 'dashboard:homepage_suggestions'
+            },
+            {
+                'label': 'Slider',
+                'url_name': 'dashboard:homepage_slider'
+            }
+        ]
     },
 ]
 

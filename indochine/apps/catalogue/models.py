@@ -9,4 +9,13 @@ class Suggests(models.Model):
         verbose_name = 'Suggestion'
 
 
-from oscar.apps.catalogue.models import * # noqa
+class Slider(models.Model):
+    pass
+
+
+class SliderImages(models.Model):
+    slider = models.ForeignKey(Slider)
+    image = models.ImageField(upload_to='homepage_slider')
+
+
+from oscar.apps.catalogue.models import *  # noqa
