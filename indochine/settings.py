@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+OSCAR_SHOP_NAME = 'Indochine'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'oscar.core.context_processors.metadata',
             ],
         },
     },
@@ -136,6 +139,11 @@ OSCAR_DASHBOARD_NAVIGATION += [
         'url_name': 'dashboard:homepage'
     },
 ]
+
+
+# Analytics
+
+GOOGLE_ANALYTICS_ID = ''
 
 
 # Debug toolbar
