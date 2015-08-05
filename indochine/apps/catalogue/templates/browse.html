@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block extra-scripts %}
-    <script type="text/javascript" src="{% static "js/product-list.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/card.js" %}"></script>
 {% endblock %}
 
 
@@ -36,6 +36,8 @@
                         <h3>{{ category.name }}</h3>
                         <div class="category-image">
                             <img class="full-width" src="{{ category.image }}" alt="category_name" />
+                            <img class="category-control category-down" src="{% static "images/Bouton-Fleche-bas.png" %}" />
+                            <img class="category-control category-up" src="{% static "images/Bouton-Fleche-haut.png" %}" />
                         </div>
                         <div class="category-products">
                             {% if category.products_nb > 0 %}

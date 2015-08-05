@@ -14,6 +14,21 @@ aside img {
     margin-top: 20px;
     margin-bottom: 10px;
 }
+.card .category .category-image {
+    position: relative;
+}
+.card .category .category-image img.category-control {
+    position: absolute;
+    right: 40px;
+    top: 55px;
+    cursor: pointer;
+}
+.card .category .category-image img.category-up {
+    display: none;
+}
+.card .category .category-products {
+    display: none;
+}
 
 .product-img {
     width: 128px;
