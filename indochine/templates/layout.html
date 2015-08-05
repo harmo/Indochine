@@ -45,8 +45,10 @@
         <script type="text/javascript" src="{% static "vendor/jQuery-2.0.3/jQuery-2.0.3.min.js" %}"></script>
         <script type="text/javascript" src="{% static "vendor/bootstrap-3.3.2/js/bootstrap.min.js" %}"></script>
         <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+        {% block extra-scripts %}{% endblock %}
     {% endcompress %}
 {% endblock %}
+{% block cdn_scripts %}{% endblock %}
 
 {% block layout %}
     {% include "components/header.html" %}
@@ -60,9 +62,4 @@
         {% block after_content %}{% endblock %}
         {% include "components/footer.html" %}
     {% endblock %}
-{% endblock %}
-
-{% block extrascripts %}
-    {% include "partials/extrascripts.html" %}
-    {{ block.super }}
 {% endblock %}
