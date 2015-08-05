@@ -1,26 +1,14 @@
 {% extends "layout.html" %}
 {% load promotion_tags %}
 {% block content_wrapper %}
-    <div class="container-fluid page">
+    <div class="container">
         <div class="page_inner">
             <div class="row">
                 <div class="col-sm-8 col-md-9">
-
-                    <div id="promotions">
-                        {% for promotion in promotions_page %}
-                            {% render_promotion promotion %}
-                        {% endfor %}
-                    </div>
-
                     {% block content %}{% endblock %}
                 </div>
 
                 <aside class="sidebar col-sm-4 col-md-3">
-                    <div id="promotions_left">
-                        {% for promotion in promotions_left %}
-                            {% render_promotion promotion %}
-                        {% endfor %}
-                    </div>
                     {% block column_right %}{% endblock %}
                 </aside>
             </div>

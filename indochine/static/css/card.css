@@ -1,0 +1,41 @@
+.card img.full-width {
+    width: 100%;
+}
+.card .card-banner {
+    margin-bottom: 10px;
+}
+
+aside .basket {
+      margin-top: 100px;
+}
+
+aside img {
+    max-width: 100%;
+}
+
+.product-img {
+    width: 128px;
+}
+
+.product {
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin-top: 20px;
+}
+.product .desc {
+    width: 90%;
+}
+.product .link-and-infos {
+    width: 10%;
+}
+.product .link-and-infos .price {
+    font-family: 'Myriad Pro Bold';
+    font-size: 22px;
+}
+.product .link-and-infos .unity {
+    font-family: 'Myriad Pro SemiBold';
+    font-size: 18px;
+}
+.product .link-and-infos a img {
+    margin-top: 10px;
+}
