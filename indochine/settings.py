@@ -49,8 +49,10 @@ INSTALLED_APPS = [
 ] + get_core_apps([
     'indochine.apps.promotions',
     'indochine.apps.catalogue',
+    'indochine.apps.partner',
     'indochine.apps.dashboard',
     'indochine.apps.dashboard.homepage',
+    'indochine.apps.dashboard.catalogue',
 ])
 
 SITE_ID = 1

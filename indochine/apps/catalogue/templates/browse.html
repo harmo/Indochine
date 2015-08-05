@@ -1,0 +1,53 @@
+{% extends "layout_2_col.html" %}
+
+{% load purchase_info_tags %}
+{% load currency_filters %}
+{% load staticfiles %}
+
+{% block column_right %}{% endblock %}
+
+{% block content %}
+    <h2>La carte</h2>
+    <img src="{% static "images/Banniere-A-Portet.png" %}" />
+    {% if products_by_category %}
+        <section>
+            {% for category_name, category in products_by_category.items %}
+                <div class="category">
+                    <h3>{{ category_name }}</h3>
+                    <div class="category-image">
+                        <img src="{{ category.image }}" alt="category_name" />
+                    </div>
+                    <div class="category-products">
+                        {% for product in category.products %}
+                            {% purchase_info_for_product request product as session %}
+                            <div class="product">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img class="media-object pull-left" src="{{ product.images.all.0.original.url|default:'/media/image_not_found.jpg'}}">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="desc pull-left">
+                                            <h3>{{ product.title }}</h3>
+                                            <h4>{{ product.subtitle }}</h4>
+                                            <p>{{ product.description|safe|removetags:'p' }}</p>
+                                        </div>
+                                        <div class="link-and-infos">
+                                            {{ session.price.incl_tax|currency:session.price.currency }}
+                                            {{ product.unity }}
+                                            <a class="show-product-link pull-right" href="{{ product.get_absolute_url }}">
+                                                <img src="{% static "images/Picto-Loupe.png" %}" alt="voir produit" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    {% else %}
+        <p class="nonefound">Aucun produit</p>
+    {% endif %}
+
+{% endblock content %}
