@@ -1,9 +1,6 @@
 .card img.full-width {
     width: 100%;
 }
-.card .card-banner {
-    margin-bottom: 10px;
-}
 
 aside .basket {
       margin-top: 100px;
@@ -11,6 +8,11 @@ aside .basket {
 
 aside img {
     max-width: 100%;
+}
+
+.card .category {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .product-img {

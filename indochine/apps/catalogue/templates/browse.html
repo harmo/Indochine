@@ -27,14 +27,14 @@
         <img class="card-banner full-width" src="{% static "images/Banniere-A-Portet.png" %}" />
         {% if products_by_category %}
             <section>
-                {% for category_name, category in products_by_category.items %}
+                {% for inc, category in products_by_category.items %}
                     <div class="category">
-                        <h3>{{ category_name }}</h3>
+                        <h3>{{ category.name }}</h3>
                         <div class="category-image">
                             <img class="full-width" src="{{ category.image }}" alt="category_name" />
                         </div>
                         <div class="category-products">
-                            {% if category.products|length > 0 %}
+                            {% if category.products_nb > 0 %}
                                 {% for product in category.products %}
                                     {% purchase_info_for_product request product as session %}
                                     <div class="product">

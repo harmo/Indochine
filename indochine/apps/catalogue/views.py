@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.db.models import Count
 from oscar.apps.catalogue.views import CatalogueView as CoreCatalogView
 from . import models
 
@@ -13,8 +14,12 @@ class CatalogueView(CoreCatalogView):
 
     def get_products_by_category(self):
         results = {}
-        for category in models.Category.objects.all():
-            results[category.name] = {
+        inc = 0
+        for category in models.Category.get_tree().annotate(nb_products=Count('product')):
+            results[inc] = {
+                'name': category.name,
                 'image': category.image.url,
-                'products': category.product_set.all()}
+                'products': category.product_set.all(),
+                'products_nb': category.nb_products}
+            inc += 1
         return results
