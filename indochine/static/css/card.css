@@ -1,6 +1,6 @@
-.card img.full-width {
-    width: 100%;
-}
+/**
+ * ASIDE BOX
+ */
 
 aside .basket {
       margin-top: 100px;
@@ -10,6 +10,14 @@ aside img {
     max-width: 100%;
 }
 
+
+/**
+ * CATEGORIES
+ */
+
+.card img.full-width {
+    width: 100%;
+}
 .card .category {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -30,10 +38,21 @@ aside img {
     display: none;
 }
 
+@media (max-width: 992px) {
+    .card .category .category-image img.category-control {
+        top: 12px;
+        right: 10px;
+    }
+}
+
+
+/**
+ * PRODUCT
+ */
+
 .product-img {
     width: 128px;
 }
-
 .product {
     background-color: #FFFFFF;
     padding: 10px;
@@ -55,4 +74,24 @@ aside img {
 }
 .product .link-and-infos a img {
     margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+    .product-img {
+        width: 100%;
+    }
+    .product .desc {
+        float: none !important;
+        width: 100%;
+    }
+    .product .link-and-infos {
+        float: none !important;
+        width: 100%;
+        position: relative;
+    }
+    .product .link-and-infos .show-product-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }

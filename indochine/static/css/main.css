@@ -46,10 +46,14 @@ body>div.container {
 }
 
 @media (max-width: 992px) {
-    h2 {
+    h2, h3 {
         text-align: center;
         background: none;
         margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: 25px;
     }
 }
 
