@@ -52,7 +52,16 @@
                                                 <div class="desc pull-left">
                                                     <h4>{{ product.title }}</h4>
                                                     <h5>{{ product.subtitle }}</h5>
-                                                    <p>{{ product.description|safe|removetags:'p' }}</p>
+                                                    <p>{{ product.description|safe }}</p>
+                                                    {% if product.add_desc != None %}
+                                                        <p>{{ product.add_desc|safe }}</p>
+                                                    {% endif %}
+                                                    {% if product.ingredients != None %}
+                                                        <p>
+                                                            <strong>Ingrédients:</strong>
+                                                            {{ product.ingredients|safe }}
+                                                        </p>
+                                                    {% endif %}
                                                 </div>
                                                 <div class="link-and-infos text-center pull-left">
                                                     <div class="price">

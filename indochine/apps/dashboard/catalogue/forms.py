@@ -21,4 +21,4 @@ class ProductForm(CoreProductForm):
     class Meta:
         model = Product
         fields = [
-            'title', 'subtitle', 'unity', 'description']
+            'title', 'subtitle', 'unity', 'description', 'add_desc', 'ingredients']

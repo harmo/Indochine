@@ -21,7 +21,9 @@ class SliderImages(models.Model):
 
 class Product(AbstractProduct):
     subtitle = models.CharField(max_length=150, null=True, blank=True, verbose_name='Sous-titre')
+    add_desc = models.TextField(null=True, blank=True, verbose_name='Supplément de description')
     unity = models.CharField(max_length=50, null=True, blank=True, verbose_name='Unité de mesure')
+    ingredients = models.TextField(null=True, blank=True, verbose_name='Ingrédients')
 
 
 from oscar.apps.catalogue.models import *  # noqa
