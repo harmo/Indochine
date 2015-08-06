@@ -45,6 +45,14 @@ body>div.container {
     margin-bottom: 20px;
 }
 
+@media (max-width: 992px) {
+    h2 {
+        text-align: center;
+        background: none;
+        margin-bottom: 0;
+    }
+}
+
 
 /*
  * HEADER
@@ -106,8 +114,21 @@ header .site-infos .hours {
     color: #B2B738;
 }
 @media (max-width: 992px) {
+    header {
+        margin-bottom: 0;
+    }
     header .site-logo img {
         margin-bottom: 10px;
+    }
+    header .site-infos div img {
+        display: none;
+    }
+
+    div.navbar {
+        border-top: none !important;
+    }
+    div.navbar .navbar-right {
+        float: left !important;
     }
 }
 
@@ -223,4 +244,15 @@ footer .links ul li a {
     font-size: 16px;
     color: #9A989A;
     padding: 10px;
+}
+
+@media (max-width: 992px) {
+    footer .contact img, footer .address img {
+        display: none;
+    }
+    footer .health img {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
 }

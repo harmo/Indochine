@@ -17,7 +17,7 @@
                         </div>
                     {% endfor %}
                 </div>
-                <div class="carousel-controls">
+                <div class="slider-controls">
                     <a class="left" href="#news" role="button" data-slide="prev">
                         <span><img src="{% static "images/Picto-Fleche-gauche-S1.png" %}" alt="précédent" /></span>
                         <span class="sr-only">Précédent</span>
@@ -62,21 +62,21 @@
 {% endblock content %}
 
 {% block after_content %}
-            <div id="rubrics" class="carousel" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="{% static "images/Banniere-Slider-2.png" %}" alt="">
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <a class="left carousel-control" href="#rubrics" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" ></span>
-                        <span class="sr-only">Précédent</span>
-                    </a>
-                    <a class="right carousel-control" href="#rubrics" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Suivant</span>
-                    </a>
-                </div>
+    <div id="rubrics" class="carousel" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="{% static "images/Banniere-Slider-2.png" %}" alt="">
             </div>
+        </div>
+        <div class="carousel-controls">
+            <a class="left carousel-control" href="#rubrics" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" ></span>
+                <span class="sr-only">Précédent</span>
+            </a>
+            <a class="right carousel-control" href="#rubrics" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Suivant</span>
+            </a>
+        </div>
+    </div>
 {% endblock %}

@@ -1,17 +1,17 @@
 /**
- * CAROUSELS
+ * Slider
  */
 
-.carousel-controls {
+.slider-controls {
     margin-top: 10px;
 }
-.carousel-controls a.left {
+.slider-controls a.left {
     float: left;
 }
-.carousel-controls a.right {
+.slider-controls a.right {
     float: right;
 }
-.carousel-controls ol.carousel-indicators {
+.slider-controls ol.carousel-indicators {
     float: left;
     list-style: none;
     bottom: 0;
@@ -21,7 +21,7 @@
     margin: 0;
     margin-left: -30%;
 }
-.carousel-controls ol.carousel-indicators li {
+.slider-controls ol.carousel-indicators li {
     display: inline-block;
     text-indent: -999px;
     cursor: pointer;
@@ -32,10 +32,16 @@
     border: 1px solid #A09EA0;
     margin-right: 20px;
 }
-.carousel-controls ol.carousel-indicators li.active {
+.slider-controls ol.carousel-indicators li.active {
     background-color: #A09EA0;
     width: 12px;
     height: 12px;
+}
+
+@media (max-width: 992px) {
+    .carousel {
+        margin-bottom: 50px;
+    }
 }
 
 
@@ -60,6 +66,20 @@
 }
 #rubrics a.carousel-control.right .glyphicon-chevron-right {
     margin-right: -75px;
+}
+
+@media (max-width: 992px) {
+    #rubrics {
+        height: auto;
+    }
+    #rubrics a.carousel-control.left .glyphicon-chevron-left {
+        margin-left: -20px;
+        margin-top: -10px;
+    }
+    #rubrics a.carousel-control.right .glyphicon-chevron-right {
+        margin-right: -20px;
+        margin-top: -10px;
+    }
 }
 
 footer {
@@ -99,4 +119,17 @@ footer {
 .suggestions .media a.show-product-link {
     width: 10%;
     margin-top: 15px;
+}
+
+@media (max-width: 992px) {
+    .suggestions {
+        margin-top: 0;
+        padding: 10px;
+    }
+    .suggestions .media .media-left {
+        display: none;
+    }
+    .suggestions .media .media-body a.show-product-link img {
+        width: 100%;
+    }
 }
