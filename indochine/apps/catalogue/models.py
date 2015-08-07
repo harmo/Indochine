@@ -1,5 +1,4 @@
 from django.db import models
-# from oscar.apps.catalogue.models import Product as CoreProduct
 from oscar.apps.catalogue.abstract_models import AbstractProduct
 
 

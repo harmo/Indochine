@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 OSCAR_SHOP_NAME = 'Indochine'
+OSCAR_DEFAULT_CURRENCY = 'EUR'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'compressor',
     'widget_tweaks',
+    'django_extensions',
 ] + get_core_apps([
     'indochine.apps.promotions',
     'indochine.apps.catalogue',
