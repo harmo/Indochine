@@ -5,10 +5,10 @@ from indochine.apps.partner.models import TAXES
 
 class Selector(object):
     def strategy(self, request=None, user=None, **kwargs):
-        if request and 'stockrecords-1-fr_tax' in request.POST:
-            if request.POST.get('stockrecords-1-fr_tax') == TAXES.FIVE_DOT_FIVE:
+        if request and 'stockrecords-0-fr_tax' in request.POST:
+            if request.POST.get('stockrecords-0-fr_tax') == TAXES.FIVE_DOT_FIVE:
                 return IncludingVAT550
-            elif request.POST.get('stockrecords-1-fr_tax') == TAXES.TEN:
+            elif request.POST.get('stockrecords-0-fr_tax') == TAXES.TEN:
                 return IncludingVAT1000
         return IncludingVAT2000
 

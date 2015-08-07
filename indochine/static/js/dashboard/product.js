@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+    var initial_ht = $('#id_stockrecords-0-price_excl_tax').val();
+    if(initial_ht != ''){
+        var tax = parseFloat(TAXES[$('#id_stockrecords-0-fr_tax').val()]);
+        $('#id_stockrecords-0-ttc').val((parseFloat(initial_ht) + parseFloat(initial_ht * tax / 100)).toFixed(2));
+    }
+
     $('#product_stock').on('keyup', '#id_stockrecords-0-ttc', function(){
         var ttc = parseFloat($(this).val());
         var tax = parseFloat(TAXES[$('#id_stockrecords-0-fr_tax').val()]);
