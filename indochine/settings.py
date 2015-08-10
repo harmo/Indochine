@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'indochine.apps.partner',
     'indochine.apps.dashboard',
     'indochine.apps.dashboard.homepage',
+    'indochine.apps.dashboard.formula',
     'indochine.apps.dashboard.catalogue',
 ])
 
@@ -154,6 +155,11 @@ OSCAR_DASHBOARD_NAVIGATION += [
             }
         ]
     },
+    {
+        'label': 'Formules',
+        'icon': 'icon-food',
+        'url_name': 'dashboard:formules'
+    }
 ]
 
 
