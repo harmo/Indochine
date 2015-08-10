@@ -1,0 +1,130 @@
+{% extends "layout_2_col.html" %}
+
+{% load history_tags %}
+{% load currency_filters %}
+{% load reviews_tags %}
+{% load staticfiles %}
+{% load product_tags %}
+{% load display_tags %}
+{% load i18n %}
+{% load purchase_info_tags %}
+
+{% block title %}
+    Indochine | {{ product.title }}
+{% endblock %}
+
+{% block description %}
+    {{ product.description|default:""|striptags }}
+{% endblock %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/suggestions.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/product.css" %}" />
+    <style>
+        body {
+            background: url('{% static "images/Photo-background-1.png" %}') no-repeat fixed center;
+            background-size:cover;
+        }
+    </style>
+{% endblock %}
+
+{% block extra-scripts %}
+    <script type="text/javascript" src="{% static "js/product.js" %}"></script>
+{% endblock %}
+
+{% block column_right %}
+    <div class="basket">
+        <img src="{% static "images/Side-bar-Infos-commande-en-ligne.png" %}" alt="Panier" />
+    </div>
+{% endblock %}
+
+{% block content %}
+    <article class="product_page">
+        <h2>
+            {{ product.get_title }}
+            {% if user.is_authenticated and user.is_staff %}
+                <a class="pull-right hidden-xs" href="{% url 'dashboard:catalogue-product' pk=product.id %}">
+                    <small><i class="icon-edit"></i> {% trans "Edit this product" %}</small>
+                </a>
+            {% endif %}
+        </h2>
+        <div class="product">
+            <div class="picture">
+                <img src="{{ product.images.all.1.original.url|default:'/media/image_not_found.jpg'}}">
+            </div>
+            <div class="infos row">
+                <div class="col-md-10">
+                    <div class="name">
+                        <h4>{{ product.get_title }}</h4>
+                        <h5>{{ product.subtitle }}</h5>
+                    </div>
+                    <div class="desc">
+                        {{ product.description|safe }}
+                        {% if product.add_desc != None %}
+                            <p>{{ product.add_desc|safe|removetags:'p' }}</p>
+                        {% endif %}
+                        {% if product.ingredients != None %}
+                            <div class="ingredients">
+                                <strong>Ingrédients:</strong>
+                                {{ product.ingredients|safe|removetags:'p' }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="col-md-2 link-price">
+                    <div class="price">
+                        {% purchase_info_for_product request product as session %}
+                        {{ session.price.incl_tax|currency:session.price.currency }}
+                    </div>
+                    <div class="unity">
+                        {{ product.unity }}
+                    </div>
+                    {% if product.ingredients != None %}
+                        <div class="link">
+                            <img class="show-ingredients" src="{% static "images/Picto-Loupe.png" %}" alt="voir ingrédients" />
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% if recomanded_products|length > 0 %}
+            <h3>Produits associés</h3>
+            <div class="associated-products">
+                <div class="list">
+                    {% for recomand in recomanded_products %}
+                        <div class="recomand">
+                            <a href="{{ recomand.get_absolute_url }}">
+                                <img src="{{ recomand.images.all.0.original.url|default:'/media/image_not_found.jpg'}}">
+                                <h5>{{ recomand.get_title }}</h5>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        <h2>Les Suggestions du chef</h2>
+        <div class="suggestions">
+            {% for suggest in suggests %}
+                {% with suggest.product as sug_pr %}
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object pull-left" src="{{ sug_pr.images.all.0.original.url|default:'/media/image_not_found.jpg'}}">
+                        </div>
+                        <div class="media-body">
+                            <div class="desc pull-left">
+                                <h3>{{ sug_pr.title }}</h3>
+                                <p>{{ sug_pr.description|safe|removetags:'p' }}</p>
+                            </div>
+                            <a class="show-sug_pr-link pull-right" href="{{ sug_pr.get_absolute_url }}">
+                                <img src="{% static "images/Picto-Loupe.png" %}" alt="voir produit" />
+                            </a>
+                        </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+        </div>
+    </article>
+{% endblock content %}

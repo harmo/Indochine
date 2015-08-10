@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db.models import Count
-from oscar.apps.catalogue.views import CatalogueView as CoreCatalogView
+from oscar.apps.catalogue.views import (
+    CatalogueView as CoreCatalogView,
+    ProductDetailView as CoreProductDetailView)
 from . import models
 
 
@@ -23,3 +25,13 @@ class CatalogueView(CoreCatalogView):
                 'products_nb': category.nb_products}
             inc += 1
         return results
+
+
+class ProductDetailView(CoreProductDetailView):
+    template_name = 'detail.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(ProductDetailView, self).get_context_data(**kwargs)
+        ctx['suggests'] = models.Suggests.objects.all()
+        ctx['recomanded_products'] = ctx['product'].recommended_products.all()
+        return ctx
