@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from oscar.apps.catalogue.abstract_models import AbstractProduct
 
 
@@ -23,6 +24,10 @@ class Product(AbstractProduct):
     add_desc = models.TextField(null=True, blank=True, verbose_name='Supplément de description')
     unity = models.CharField(max_length=50, null=True, blank=True, verbose_name='Unité de mesure')
     ingredients = models.TextField(null=True, blank=True, verbose_name='Ingrédients')
+
+    def get_absolute_url(self):
+        return reverse('card:detail',
+                       kwargs={'product_slug': self.slug, 'pk': self.id})
 
 
 from oscar.apps.catalogue.models import *  # noqa
