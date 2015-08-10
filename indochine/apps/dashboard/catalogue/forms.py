@@ -65,4 +65,5 @@ BaseStockRecordFormSet = inlineformset_factory(
 
 
 class StockRecordFormSet(BaseStockRecordFormSet, CoreStockRecordFormSet):
-    pass
+    def __init__(self, product_class, user, *args, **kwargs):
+        super(StockRecordFormSet, self).__init__(product_class, user, *args, **kwargs)
