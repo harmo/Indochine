@@ -179,6 +179,19 @@ div.navbar ul.nav li img.visible {
 
 
 /**
+ * ASIDE BOX
+ */
+
+aside .basket {
+      margin-top: 100px;
+}
+
+aside img {
+    max-width: 100%;
+}
+
+
+/**
  * FOOTER
  */
 
