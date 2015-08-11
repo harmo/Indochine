@@ -16,7 +16,7 @@
                 {% if product.add_desc != None %}
                     <p>{{ product.add_desc|safe }}</p>
                 {% endif %}
-                {% if product.ingredients != '' %}
+                {% if product.ingredients != '' and product.ingredients != None %}
                     <p>
                         <strong>Ingrédients:</strong>
                         {{ product.ingredients }}
