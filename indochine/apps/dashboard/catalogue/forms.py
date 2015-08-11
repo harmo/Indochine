@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
 from django.forms.models import inlineformset_factory
+from treebeard.forms import movenodeform_factory
 from oscar.apps.dashboard.catalogue.forms import (
     ProductForm as CoreProductForm,
     StockRecordForm as CoreStockRecordForm,
@@ -10,9 +11,15 @@ from indochine.apps.partner.models import TAXES
 from indochine.settings import OSCAR_DEFAULT_CURRENCY
 
 
+Category = get_model('catalogue', 'Category')
 Product = get_model('catalogue', 'Product')
 StockRecord = get_model('partner', 'StockRecord')
 Partner = get_model('partner', 'Partner')
+
+
+CategoryForm = movenodeform_factory(
+    Category,
+    fields=['name', 'description', 'image', 'is_formula'])
 
 
 class ProductSearchForm(forms.Form):
@@ -40,10 +47,6 @@ class StockRecordForm(CoreStockRecordForm):
     ttc = forms.FloatField(
         required=False)
 
-    partner_sku = forms.CharField(
-        widget=forms.HiddenInput(),
-        required=False)
-
     price_currency = forms.CharField(
         widget=forms.HiddenInput(),
         required=False)
@@ -55,7 +58,7 @@ class StockRecordForm(CoreStockRecordForm):
     class Meta:
         model = StockRecord
         fields = [
-            'num_in_stock', 'low_stock_threshold', 'partner',
+            'num_in_stock', 'low_stock_threshold', 'partner', 'partner_sku',
             'price_excl_tax', 'fr_tax', 'cost_price', 'ttc'
         ]
 

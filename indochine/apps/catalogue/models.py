@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
-from oscar.apps.catalogue.abstract_models import AbstractProduct
+from oscar.apps.catalogue.abstract_models import AbstractProduct, AbstractCategory
 
 
 class Suggests(models.Model):
@@ -28,6 +28,10 @@ class Product(AbstractProduct):
     def get_absolute_url(self):
         return reverse('card:detail',
                        kwargs={'product_slug': self.slug, 'pk': self.id})
+
+
+class Category(AbstractCategory):
+    is_formula = models.BooleanField(default=False, verbose_name='Est une formule ?')
 
 
 from oscar.apps.catalogue.models import *  # noqa

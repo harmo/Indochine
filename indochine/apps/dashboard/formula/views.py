@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django_tables2 import RequestConfig
-from indochine.apps.dashboard.homepage.tables import SuggestsTable, SliderTable
-from indochine.apps.dashboard.homepage.forms import ProductSelectForm, SliderForm
-from oscar.core.loading import get_model
+# from django_tables2 import RequestConfig
+# from indochine.apps.dashboard.homepage.tables import SuggestsTable, SliderTable
+from indochine.apps.dashboard.formula.forms import FormulaLeftForm, FormulaRightForm
+# from oscar.core.loading import get_model
 
 # Suggests = get_model('catalogue', 'Suggests')
 # Product = get_model('catalogue', 'Product')
@@ -12,7 +12,8 @@ from oscar.core.loading import get_model
 
 def formula(request):
     return render(request, 'formula.html', {
-        'products_form': ProductSelectForm})
+        'formula_left_form': FormulaLeftForm,
+        'formula_right_form': FormulaRightForm})
 
 
 # def homepage_suggestions(request):

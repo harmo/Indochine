@@ -1,0 +1,39 @@
+{% load purchase_info_tags %}
+{% load currency_filters %}
+{% load staticfiles %}
+
+{% purchase_info_for_product request product as session %}
+<div class="product">
+    <div class="media">
+        <div class="media-left">
+            <img class="media-object pull-left product-img" src="{{ product.images.all.1.original.url|default:'/media/image_not_found.jpg'}}">
+        </div>
+        <div class="media-body">
+            <div class="desc pull-left">
+                <h4>{{ product.title }}</h4>
+                <h5>{{ product.subtitle }}</h5>
+                <p>{{ product.description|safe }}</p>
+                {% if product.add_desc != None %}
+                    <p>{{ product.add_desc|safe }}</p>
+                {% endif %}
+                {% if product.ingredients != '' %}
+                    <p>
+                        <strong>Ingrédients:</strong>
+                        {{ product.ingredients }}
+                    </p>
+                {% endif %}
+            </div>
+            <div class="link-and-infos text-center pull-left">
+                <div class="price">
+                    {{ session.price.incl_tax|currency:session.price.currency }}
+                </div>
+                <div class="unity">
+                    {{ product.unity }}
+                </div>
+                <a class="show-product-link" href="{{ product.get_absolute_url }}">
+                    <img src="{% static "images/Picto-Loupe.png" %}" alt="voir produit" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

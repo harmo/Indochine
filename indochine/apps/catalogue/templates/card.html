@@ -1,0 +1,60 @@
+{% extends "layout_2_col.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Indochine | La carte
+{% endblock %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/card.css" %}" />
+    <style>
+        body {
+            background: url('{% static "images/Photo-background-1.png" %}') no-repeat fixed center;
+            background-size:cover;
+        }
+    </style>
+{% endblock %}
+
+{% block extra-scripts %}
+    <script type="text/javascript" src="{% static "js/card.js" %}"></script>
+{% endblock %}
+
+
+{% block column_right %}
+    <div class="basket">
+        <img src="{% static "images/Side-bar-Infos-commande-en-ligne.png" %}" alt="Panier" />
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h2>La carte</h2>
+        <img class="card-banner full-width" src="{% static "images/Banniere-A-Portet.png" %}" />
+        {% if products_by_category %}
+            <section>
+                {% for inc, category in products_by_category.items %}
+                    <div class="category">
+                        <h3>{{ category.name }}</h3>
+                        <div class="category-image">
+                            <img class="full-width" src="{{ category.image }}" alt="category_name" />
+                            <img class="category-control category-down" src="{% static "images/Bouton-Fleche-bas.png" %}" />
+                            <img class="category-control category-up" src="{% static "images/Bouton-Fleche-haut.png" %}" />
+                        </div>
+                        <div class="category-products">
+                            {% if category.products_nb > 0 %}
+                                {% for product in category.products %}
+                                    {% include "product-details.html" with product=product %}
+                                {% endfor %}
+                            {% else %}
+                                Aucun produit
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        {% else %}
+            <p class="nonefound">Aucun produit</p>
+        {% endif %}
+    </div>
+{% endblock content %}

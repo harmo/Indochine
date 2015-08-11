@@ -7,7 +7,7 @@ from . import models
 
 
 class CatalogueView(CoreCatalogView):
-    template_name = 'browse.html'
+    template_name = 'card.html'
 
     def get_context_data(self, **kwargs):
         ctx = super(CatalogueView, self).get_context_data(**kwargs)
@@ -16,14 +16,16 @@ class CatalogueView(CoreCatalogView):
 
     def get_products_by_category(self):
         results = {}
-        inc = 0
-        for category in models.Category.get_tree().annotate(nb_products=Count('product')):
+        categories = models.Category\
+            .get_tree()\
+            .exclude(is_formula=True)\
+            .annotate(nb_products=Count('product'))
+        for inc, category in enumerate(categories):
             results[inc] = {
                 'name': category.name,
                 'image': category.image.url,
                 'products': category.product_set.all(),
                 'products_nb': category.nb_products}
-            inc += 1
         return results
 
 
@@ -35,3 +37,25 @@ class ProductDetailView(CoreProductDetailView):
         ctx['suggests'] = models.Suggests.objects.all()
         ctx['recomanded_products'] = ctx['product'].recommended_products.all()
         return ctx
+
+
+class FormulaView(CoreCatalogView):
+    template_name = 'formulas.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(FormulaView, self).get_context_data(**kwargs)
+        ctx['products_by_formula'] = self.get_products_by_formula()
+        return ctx
+
+    def get_products_by_formula(self):
+        results = {}
+        categories = models.Category\
+            .get_tree()\
+            .exclude(is_formula=False)\
+            .annotate(nb_products=Count('product'))
+        for inc, category in enumerate(categories):
+            results[inc] = {
+                'name': category.name,
+                'products': category.product_set.all(),
+                'products_nb': category.nb_products}
+        return results
