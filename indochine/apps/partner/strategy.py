@@ -14,7 +14,7 @@ class Selector(object):
 
 
 class IncludingVAT550(strategy.FixedRateTax):
-    rate = (TAXES.CHOICES_DICT[TAXES.FIVE_DOT_FIVE] / 100)
+    rate = D(D(TAXES.CHOICES_DICT[TAXES.FIVE_DOT_FIVE]) / 100)
 
 
 class IncludingVAT1000(strategy.FixedRateTax):
