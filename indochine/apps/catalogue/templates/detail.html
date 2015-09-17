@@ -61,12 +61,12 @@
                     <div class="desc">
                         {{ product.description|safe }}
                         {% if product.add_desc != None %}
-                            <p>{{ product.add_desc|safe|removetags:'p' }}</p>
+                            <p>{{ product.add_desc|linebreaks|safe }}</p>
                         {% endif %}
                         {% if product.ingredients != None %}
                             <div class="ingredients">
                                 <strong>Ingrédients:</strong>
-                                {{ product.ingredients|safe|removetags:'p' }}
+                                {{ product.ingredients|linebreaks|safe }}
                             </div>
                         {% endif %}
 
