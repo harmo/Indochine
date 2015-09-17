@@ -19,7 +19,7 @@
                 {% if product.ingredients != '' and product.ingredients != None %}
                     <p>
                         <strong>Ingrédients:</strong>
-                        {{ product.ingredients|linebreaks|safe }}
+                        {{ product.ingredients|safe|linebreaksbr }}
                     </p>
                 {% endif %}
             </div>

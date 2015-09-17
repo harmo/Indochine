@@ -59,14 +59,14 @@
                         <h5>{{ product.subtitle }}</h5>
                     </div>
                     <div class="desc">
-                        {{ product.description|safe }}
+                        {{ product.description|safe|linebreaksbr }}
                         {% if product.add_desc != None %}
-                            <p>{{ product.add_desc|linebreaks|safe }}</p>
+                            <p>{{ product.add_desc|safe|linebreaksbr }}</p>
                         {% endif %}
                         {% if product.ingredients != None %}
                             <div class="ingredients">
                                 <strong>Ingrédients:</strong>
-                                {{ product.ingredients|linebreaks|safe }}
+                                {{ product.ingredients|safe|linebreaksbr }}
                             </div>
                         {% endif %}
 
