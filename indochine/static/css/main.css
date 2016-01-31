@@ -192,6 +192,19 @@ aside img {
 
 
 /**
+ * BACK TO TOP
+ */
+
+div.back-to-top {
+    position: fixed;
+    top: 100px;
+    right: 200px;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+/**
  * FOOTER
  */
 
@@ -264,6 +277,14 @@ footer .links ul li a {
 }
 
 @media (max-width: 992px) {
+    div.back-to-top {
+        bottom: 25px;
+        top: inherit;
+        right: inherit;
+        width: 100%;
+        text-align: center;
+    }
+
     footer .contact img, footer .address img {
         display: none;
     }
