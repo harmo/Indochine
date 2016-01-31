@@ -22,4 +22,12 @@ jQuery(function($) {
         $('body, html').animate({scrollTop: 0}, 'slow');
     });
 
+    $('.suggestions').find('.desc').each(function(){
+        var new_desc, desc = $(this).find('p').text().trim();
+        if(desc.length > 90){
+            new_desc = desc.substr(0, 90) + ' <small><i>…, lire la suite</i></small>';
+        }
+        $(this).find('p').html(new_desc);
+    });
+
 });
