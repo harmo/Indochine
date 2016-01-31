@@ -24,8 +24,8 @@ jQuery(function($) {
 
     $('.suggestions').find('.desc').each(function(){
         var new_desc, desc = $(this).find('p').text().trim();
-        if(desc.length > 90){
-            new_desc = desc.substr(0, 90) + ' <small><i>…, lire la suite</i></small>';
+        if(desc.length > 80){
+            new_desc = desc.substr(0, 80) + ' <small><i>…, lire la suite</i></small>';
         }
         $(this).find('p').html(new_desc);
     });
