@@ -89,7 +89,7 @@
             <div class="associated-products">
                 <div class="list row">
                     {% for recomand in recomanded_products %}
-                        <div class="recomand col-md-4">
+                        <div class="recomand col-md-2">
                             <a href="{{ recomand.get_absolute_url }}">
                                 <img src="{{ recomand.images.all.0.original.url|default:'/media/image_not_found.jpg'}}">
                                 <h5>{{ recomand.get_title }}</h5>
