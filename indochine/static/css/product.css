@@ -17,9 +17,6 @@
 .product .infos {
     padding: 20px;
 }
-.product .infos .desc .ingredients {
-    display: none;
-}
 .product .infos .link-price {
     text-align: center;
 }
