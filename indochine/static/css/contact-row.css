@@ -1,0 +1,49 @@
+div.contact-row {
+    margin-top: 20px;
+}
+
+.contact img, .address img {
+    float: left;
+    margin-right: 20px;
+}
+.contact a {
+    display: block;
+}
+.contact a.phone {
+    font-family: 'Myriad Pro Bold';
+    font-size: 22px;
+    color: #791F1F;
+    margin-top: 5px;
+}
+.contact a.phone:hover {
+    text-decoration: none;
+}
+.contact a.mail {
+    font-family: 'Myriad Pro SemiBold';
+    font-size: 17px;
+    color: #363136;
+}
+.contact a.mail:hover {
+    text-decoration: none;
+}
+.health img {
+    margin-top: 20px;
+    max-width: 345px;
+    margin-left: -70px;
+}
+.address address {
+    font-family: 'Myriad Pro Bold';
+    font-size: 18px;
+    color: #363136;
+    margin-top: 5px;
+}
+.address address span {
+    font-family: 'Myriad Pro Regular';
+    font-size: 16px;
+    color: #791F1F;
+}
+.address address div.sec {
+    font-family: 'Myriad Pro Regular';
+    color: #B2B738;
+    font-size: 17px;
+}

@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'mon-compte/', TemplateView.as_view(template_name='static-pages/account.html'), name='account'),
     url(r'qui-sommes-nous/', TemplateView.as_view(template_name='static-pages/us.html'), name='us'),
     url(r'groupes-et-pros/', TemplateView.as_view(template_name='static-pages/groups-and-pros.html'), name='pros'),
+    url(r'contact/', TemplateView.as_view(template_name='static-pages/contact.html'), name='contact'),
     url(r'', include(application.urls)),
 
 ]

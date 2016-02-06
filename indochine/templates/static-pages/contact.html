@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact-row.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Contact</h1>
+
+    <p>
+        Toute l'équipe Indochine se tient à votre entière disposition. Vous pouvez nous contacter par
+        mail, téléphone ou courrier en remplissant le formulaire ci-dessous.<br />
+        À très vite pour de nouveaux plaisirs gustatifs.
+    </p>
+
+    <div class="row contact-row">
+        <div class="col-md-4 contact">
+            <img src="{% static "images/Picto-footer-Bulle.png" %}" alt="contact" />
+            <a class="phone" href="tel:+33561723228">05 61 72 32 28</a>
+            <a class="mail" href="mailto:info@traiteurindochine.fr">info@traiteurindochine.fr</a>
+        </div>
+        <div class="col-md-6 address">
+            <img src="{% static "images/Picto-footer-Map.png" %}" alt="map-picto" />
+            <address>
+                C.C. Carrefour Grand Portet - <span>Entrée n°1</span>
+                <div class="sec">Boulevard de l'Europe 31120 Portet-sur-Garonne</div>
+            </address>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <img src="http://placehold.it/1170x350" class="contact-banner img-responsive">
+            <form action="" class="contact-fom-wrapper">
+                <div class="contact-fom row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="civility"> Mme
+                                </label>
+                                <label>
+                                    <input type="radio" name="civility"> M.
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastname" class="form-control" placeholder="Nom" />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" class="form-control" placeholder="Téléphone" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <div class="radio">
+                                <span class="glyphicon glyphicon-info-sign">
+                                    Merci de remplir tous les champs
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" cols="60" rows="6" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn contact-form-submit">
+                            <span class="glyphicon glyphicon-send">&nbsp;</span>
+                            envoyez
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
