@@ -8,4 +8,26 @@ img.account-banner {
 
 h2 {
     text-transform: lowercase;
+    margin-bottom: 20px
+}
+
+div.account-fom {
+    background-color: #323232;
+    color: #FFFFFF;
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+div.account-fom .form-control {
+    border-radius: 0;
+}
+
+.account-form-submit {
+    font-family: 'Myriad Pro SemiBold';
+    text-transform: uppercase;
+    background-color: #B1B835;
+    color: #FFFFFF;
+    border-radius: 0;
+    margin: 40px 0 0 60px;
 }
