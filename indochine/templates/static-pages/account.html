@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Mon compte</h1>
+
+    <img src="http://placehold.it/1140x300" class="account-banner img-responsive">
+
+    <h2>Carte de fidélite</h2>
+    <p>
+        Une petite surprise vous attend, une fois les champs ci-dessous validés.
+    </p>
+
+    <div class="account-fom">
+
+    </div>
+{% endblock content %}
