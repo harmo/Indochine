@@ -1,5 +1,5 @@
 /**
- * Slider
+ * SLIDER
  */
 
 .slider-controls {
@@ -60,6 +60,10 @@
 }
 #rubrics a.carousel-control {
     background-image: none;
+    color: rgba(0, 0, 0, .2);
+}
+#rubrics a.carousel-control:hover {
+    color: rgba(0, 0, 0, .8);
 }
 #rubrics a.carousel-control.left .glyphicon-chevron-left {
     margin-left: -75px;
