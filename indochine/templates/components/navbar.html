@@ -37,14 +37,6 @@
                 </ul>
                 <ul class="nav navbar-nav pull-right navbar-right">
                     <li>
-                        {% url 'account' as account_url %}
-                        <a href="{{ account_url }}" {% if request.path == account_url %}class="active"{% endif %}>
-                            <img src="{% static "images/Navbar-Mon-compte.png" %}" class="visible" alt="mon compte" />
-                            <img src="{% static "images/Navbar-Mon-compte-roll.png" %}" alt="mon compte" />
-                            Mon compte
-                        </a>
-                    </li>
-                    <li>
                         {% url 'us' as us_url %}
                         <a href="{{ us_url }}" {% if request.path == us_url %}class="active"{% endif %}>
                             <img src="{% static "images/Navbar-Qui-sommes-nous.png" %}" class="visible" alt="qui sommes nous" />
@@ -58,6 +50,14 @@
                             <img src="{% static "images/Navbar-Groupe-et-pro.png" %}" class="visible" alt="groupe et pro" />
                             <img src="{% static "images/Navbar-Groupe-et-pro-roll.png" %}" alt="groupe et pro" />
                             Groupe & pro
+                        </a>
+                    </li>
+                    <li>
+                        {% url 'account' as account_url %}
+                        <a href="{{ account_url }}" {% if request.path == account_url %}class="active"{% endif %}>
+                            <img src="{% static "images/Navbar-Mon-compte.png" %}" class="visible" alt="mon compte" />
+                            <img src="{% static "images/Navbar-Mon-compte-roll.png" %}" alt="mon compte" />
+                            Mon compte
                         </a>
                     </li>
                 </ul>
