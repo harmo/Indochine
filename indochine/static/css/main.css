@@ -2,34 +2,44 @@ body {
     font-family: 'Myriad Pro Regular';
 }
 
-h2 {
+h1 {
     text-transform: uppercase;
     font-family: 'Myriad Pro Bold';
     font-size: 32px;
     color: #363136;
     background: url('/static/images/Trait-H1.png') no-repeat bottom left;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: 'Myriad Pro SemiBold';
+    font-size: 28px;
+    color: #363136;
+    background: url('/static/images/Trait-H2.png') no-repeat bottom left;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 h3 {
-    text-transform: uppercase;
-    font-family: 'Myriad Pro SemiBold';
-    font-size: 32px;
-    color: #363136;
-    background: url('/static/images/Trait-H2.png') no-repeat bottom left;
-    padding-bottom: 10px;
-}
-
-h4 {
     text-transform: uppercase;
     font-family: 'Myriad Pro Bold';
     font-size: 22px;
     color: #791F1F;
     margin-bottom: 0;
+    margin-top: 0;
+}
+
+h4 {
+    font-family: 'Myriad Pro Regular';
+    font-size: 16px;
+    color: #B2B738;
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 h5 {
-    font-family: 'Myriad Pro Regular';
+    font-family: 'Myriad Pro SemiBold';
     font-size: 16px;
     color: #B2B738;
     margin-top: 0;

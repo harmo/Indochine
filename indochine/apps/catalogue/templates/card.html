@@ -29,13 +29,13 @@
 
 {% block content %}
     <div class="card">
-        <h2>La carte</h2>
+        <h1>La carte</h1>
         <img class="card-banner full-width" src="{% static "images/Banniere-A-Portet.png" %}" />
         {% if products_by_category %}
             <section>
                 {% for inc, category in products_by_category.items %}
                     <div class="category">
-                        <h3>{{ category.name }}</h3>
+                        <h2>{{ category.name }}</h2>
                         <div class="category-image">
                             <img class="full-width" src="{{ category.image }}" alt="category_name" />
                             <img class="category-control category-down" src="{% static "images/Bouton-Fleche-bas.png" %}" />

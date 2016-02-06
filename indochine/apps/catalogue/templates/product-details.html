@@ -10,17 +10,11 @@
         </div>
         <div class="media-body">
             <div class="desc pull-left">
-                <h4>{{ product.title }}</h4>
-                <h5>{{ product.subtitle }}</h5>
+                <h3>{{ product.title }}</h3>
+                <h4>{{ product.subtitle }}</h4>
                 <p>{{ product.description|safe|linebreaksbr }}</p>
                 {% if product.add_desc != None %}
                     <p>{{ product.add_desc|safe|linebreaksbr }}</p>
-                {% endif %}
-                {% if product.ingredients != '' and product.ingredients != None %}
-                    <p>
-                        <strong>Ingrédients:</strong>
-                        {{ product.ingredients|safe|linebreaksbr }}
-                    </p>
                 {% endif %}
             </div>
             <div class="link-and-infos text-center pull-left">
