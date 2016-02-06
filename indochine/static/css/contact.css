@@ -44,6 +44,11 @@ div.contact-fom .form-control {
         height: 430px;
     }
 
+    div.contact-fom {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     footer {
         margin-top: 100px;
     }
