@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" href="{% static 'css/pros.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Groupe et pro</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="http://placehold.it/390x390" class="pros-banner img-responsive">
+        </div>
+
+        <div class="col-md-8">
+            <p>
+                Pour tous vos repas de fêtes, de groupes ou professionnels, Indochine saura vous satisfaire.
+            </p>
+            <p>
+                Flexible et soucieux du bon appétit de nos clients, nous serons adapter vos besoins, et vous conseiller tant au niveau des quantités, que des produits.
+            </p>
+
+            <a href="{% url 'card:list' %}" class="card-link">
+                <span class="glyphicon glyphicon-cutlery">&nbsp;</span>
+                Consultez nos produits
+            </a>
+
+            <h2>Contactez-nous pour des renseignements supplémentaires:</h2>
+
+            <div class="row contact-row">
+                <div class="col-md-7 address">
+                    <img src="{% static "images/Picto-footer-Map.png" %}" alt="map-picto" />
+                    <address>
+                        C.C. Carrefour Grand Portet - <span>Entrée n°1</span>
+                        <div class="sec">Boulevard de l'Europe 31120 Portet-sur-Garonne</div>
+                    </address>
+                </div>
+                <div class="col-md-5 contact">
+                    <img src="{% static "images/Picto-footer-Bulle.png" %}" alt="contact" />
+                    <a class="phone" href="tel:+33561723228">05 61 72 32 28</a>
+                    <a class="mail" href="mailto:info@traiteurindochine.fr">info@traiteurindochine.fr</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
