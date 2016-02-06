@@ -40,14 +40,14 @@
 
 {% block content %}
     <article class="product_page">
-        <h2>
+        <h1>
             {{ product.get_title }}
             {% if user.is_authenticated and user.is_staff %}
                 <a class="pull-right hidden-xs" href="{% url 'dashboard:catalogue-product' pk=product.id %}">
                     <small><i class="icon-edit"></i> {% trans "Edit this product" %}</small>
                 </a>
             {% endif %}
-        </h2>
+        </h1>
         <div class="product">
             <div class="picture">
                 <img src="{{ product.images.all.1.original.url|default:'/media/image_not_found.jpg'}}">
@@ -56,7 +56,7 @@
                 <div class="col-md-10">
                     <div class="name">
                         <h3>{{ product.get_title }}</h3>
-                        <h5>{{ product.subtitle }}</h5>
+                        <h4>{{ product.subtitle }}</h4>
                     </div>
                     <div class="desc">
                         {{ product.description|safe|linebreaksbr }}
@@ -85,7 +85,7 @@
         </div>
 
         {% if recomanded_products|length > 0 %}
-            <h3>Produits associés</h3>
+            <h2>Produits associés</h2>
             <div class="associated-products">
                 <div class="list row">
                     {% for recomand in recomanded_products %}
@@ -100,7 +100,7 @@
             </div>
         {% endif %}
 
-        <h2>Les Suggestions du chef</h2>
+        <h1>Les Suggestions du chef</h1>
         <div class="suggestions">
             {% for suggest in suggests %}
                 {% with suggest.product as sug_pr %}
