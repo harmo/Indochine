@@ -37,21 +37,24 @@
                 </ul>
                 <ul class="nav navbar-nav pull-right navbar-right">
                     <li>
-                        <a href="#" {% if request.path == url %}class="active"{% endif %}>
+                        {% url 'account' as account_url %}
+                        <a href="{{ account_url }}" {% if request.path == account_url %}class="active"{% endif %}>
                             <img src="{% static "images/Navbar-Mon-compte.png" %}" class="visible" alt="mon compte" />
                             <img src="{% static "images/Navbar-Mon-compte-roll.png" %}" alt="mon compte" />
                             Mon compte
                         </a>
                     </li>
                     <li>
-                        <a href="#" {% if request.path == url %}class="active"{% endif %}>
+                        {% url 'us' as us_url %}
+                        <a href="{{ us_url }}" {% if request.path == us_url %}class="active"{% endif %}>
                             <img src="{% static "images/Navbar-Qui-sommes-nous.png" %}" class="visible" alt="qui sommes nous" />
                             <img src="{% static "images/Navbar-Qui-sommes-nous-roll.png" %}" alt="qui sommes nous" />
                             Qui sommes nous ?
                         </a>
                     </li>
                     <li>
-                        <a href="#" {% if request.path == url %}class="active"{% endif %}>
+                        {% url 'pros' as pros_url %}
+                        <a href="{{ pros_url }}" {% if request.path == pros_url %}class="active"{% endif %}>
                             <img src="{% static "images/Navbar-Groupe-et-pro.png" %}" class="visible" alt="groupe et pro" />
                             <img src="{% static "images/Navbar-Groupe-et-pro-roll.png" %}" alt="groupe et pro" />
                             Groupe & pro

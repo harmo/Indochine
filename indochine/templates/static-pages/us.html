@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" href="{% static 'css/us.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Qui sommes-nous ?</h1>
+    <p class="description">
+        Il y a 25 ans, Indochine ouvrait ses portes au sein de galerie commerciale de Carrefour Portet sur Garonne, à l’entrée n°1.
+        Spécialisé depuis toujours dans l’art culinaire, Indochine s’est positionné comme votre traiteur et vente de plat à emporter de cuisine vietnamienne.
+        Indochine réchauffe tous vos plats pour une consommation rapide et vous sert de nombreux plats pour toutes vos occasions: anniversaires, soirées spéciales, mariages, repas d’entreprise etc.
+    </p>
+
+    <img src="http://placehold.it/1140x300" class="us-banner">
+
+    <h2>Une entreprise familiale, à taille humaine</h2>
+    <p class="team">
+        Indochine c’est aussi une sacré équipe:
+        <ul class="list-unstyled">
+            <li>En cuisine: Hai, Jean-Luc et Thuy</li>
+            <li>Au service: Les soeurs Xuan et May</li>
+            <li>Côté administratifs: Xuan</li>
+            <li>Côté communication et marketing: May</li>
+            <li>Développement du site: David</li>
+            <li>Graphiste/photographe: Axelle</li>
+            <li>Graphiste/Webdesigner: Caroline</li>
+        </ul>
+    </p>
+
+    <p class="links">
+        Retrouvez le site d’Axelle et Caroline, Indochine vous les recommande, si vous voulez un travail soigné.
+        <ul class="list-unstyled">
+            <li>Axelle</li>
+            <li><a href="http://www.k-robaz.com">k-robaz.com</a></li>
+        </ul>
+    </p>
+
+    <p>
+        Le petit mot de la fin:<br />
+        L’équipe Indochine, vous remercie pour votre fidélité et votre bonne humeur. Que l’histoire entre vous et nous dure encore 25 ans et plus encore.
+    </p>
+{% endblock content %}
